@@ -1,18 +1,37 @@
 import { Component } from '@angular/core';
+import { Cliente } from './models/cliente';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'UD35-1';
-  nombre:String | undefined;
-  cif:String | undefined;
-  direccion:String | undefined;
-  grupo:String | undefined;
+  nombreCliente:string="";
+  cifCliente:string="";
+  direccionCliente:string="";
+  grupoCliente:number=1;
+  ListadoClientes: Cliente[] | null = null;
 
-  a:String = "wewe";
+  constructor(){}
+
+  guardar():void{
+
+    const cliente : Cliente = {
+      nombre: this.nombreCliente,
+      cif: this.cifCliente,
+      direccion: this.direccionCliente,
+      grupo : this.grupoCliente
+    }
+
+    if(this.ListadoClientes == null) this.ListadoClientes = [];
+    this.ListadoClientes.push(cliente);
+
+
+
+  }
 
 
 

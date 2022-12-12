@@ -1,23 +1,49 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="container"
+style="border: solid; text-align: center; width: 600px; margin: auto; border-color: blue;">
+
+    <h1>Alta cliente</h1>
+    <p></p>
+     <div class="mb-3 row">
+      <label for="usr" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="nombreCliente" >
+      </div>
+
+    </div>
+    <div class="mb-3 row">
+      <label for="usr" class="col-sm-2 col-form-label">CIF</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="cifCliente">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="usr" class="col-sm-2 col-form-label">Dirección</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="direccionCliente">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="usr" class="col-sm-2 col-form-label">Grupo</label>
+      <div class="dropdown col-sm-2">
+        <button class="btn dropdown-toggle"  [(ngModel)]="grupoCliente" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sin definir
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">1</a></li>
+          <li><a class="dropdown-item" href="#">2</a></li>
+          <li><a class="dropdown-item" href="#">3</a></li>
+        </ul>
+      </div>
+    </div>
+    <p></p>
+    <div class="mb-3 row">
+      <div class="col-sm-2">
+        <button (click)="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+  <app-listado-clientes>=[ListadoClientes]="ListadoClientes"</app-listado-clientes>
+
+  <router-outlet></router-outlet>
 
 
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-<router-outlet></router-outlet>
-<h1>Hola mon {{a}}</h1>
